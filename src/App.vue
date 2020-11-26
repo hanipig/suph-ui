@@ -55,12 +55,12 @@
       <suph-button type="warning" :round="round">圆形按钮</suph-button>
     </div>
     <div class="demo-tr">
-      <suph-button plain="plain">朴素按钮</suph-button>
-      <suph-button type="primary" plain="plain">朴素按钮</suph-button>
-      <suph-button type="success" plain="plain">朴素按钮</suph-button>
-      <suph-button type="danger" plain="plain">朴素按钮</suph-button>
-      <suph-button type="info" plain="plain">朴素按钮</suph-button>
-      <suph-button type="warning" plain="plain">朴素按钮</suph-button>
+      <suph-button plain>朴素按钮</suph-button>
+      <suph-button type="primary" plain>朴素按钮</suph-button>
+      <suph-button type="success" plain>朴素按钮</suph-button>
+      <suph-button type="danger" plain>朴素按钮</suph-button>
+      <suph-button type="info" plain>朴素按钮</suph-button>
+      <suph-button type="warning" plain>朴素按钮</suph-button>
     </div>
   </div>
 </template>

@@ -20,18 +20,9 @@ export default {
       type: String,
       default: ""
     },
-    disabled: {
-      type: Boolean,
-      default: false
-    },
-    round: {
-      type: Boolean,
-      default: false
-    },
-    plain: {
-      type: Boolean,
-      default: false
-    }
+    disabled: Boolean,
+    round: Boolean,
+    plain: Boolean
   },
   methods: {
     handleClick () {
