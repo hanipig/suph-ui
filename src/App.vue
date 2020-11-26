@@ -62,6 +62,11 @@
       <suph-button type="info" plain>朴素按钮</suph-button>
       <suph-button type="warning" plain>朴素按钮</suph-button>
     </div>
+    <div class="demo-tr">
+      <!-- <suph-button></suph-button> -->
+      <suph-button @click="handleClick">点击事件</suph-button>
+      <suph-button @click="handleClick" disabled>点击事件</suph-button>
+    </div>
   </div>
 </template>
 
@@ -77,6 +82,11 @@ export default {
     return {
       isDisabled: true,
       round: true
+    }
+  },
+  methods: {
+    handleClick (e) {
+      console.log(e);
     }
   }
 }

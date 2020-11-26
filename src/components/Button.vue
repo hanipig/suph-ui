@@ -25,12 +25,13 @@ export default {
     plain: Boolean
   },
   methods: {
-    handleClick () {
-      console.log("click");
+    handleClick (e) {
+      if (!this.disabled) {
+        this.$emit("click", e);
+      }
     }
   }
 }
-
 </script>
 
 <style lang="less" scoped>
