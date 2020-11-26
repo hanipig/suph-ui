@@ -1,5 +1,9 @@
 <template>
-  <button :class="['suph-button', type ? [type + '-button'] : '', size ? [size + '-button'] : '', disabled ? 'disabled' : '']" :disabled="disabled" @click="handleClick">
+  <button :class="['suph-button', type ? [type + '-button'] : '', size ? [size + '-button'] : '', {
+    disabled: disabled,
+    round: round,
+    plain: plain
+  }]" :disabled="disabled" @click="handleClick">
     <slot></slot>
   </button>
 </template>
@@ -19,10 +23,18 @@ export default {
     disabled: {
       type: Boolean,
       default: false
+    },
+    round: {
+      type: Boolean,
+      default: false
+    },
+    plain: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {
-    handleClick(){
+    handleClick () {
       console.log("click");
     }
   }
@@ -63,6 +75,9 @@ export default {
     border-color: #c6e2ff;
     background-color: #ecf5ff;
   }
+  &:active {
+    border-color: @primaryColor;
+  }
 }
 
 .primary-button {
@@ -74,6 +89,11 @@ export default {
     color: #ffffff;
     background-color: @primaryHoverColor;
     border-color: @primaryHoverColor;
+  }
+  &:active {
+    color: #ffffff;
+    background-color: @primaryColor;
+    border-color: @primaryColor;
   }
 }
 
@@ -87,6 +107,11 @@ export default {
     background-color: @successHoverColor;
     border-color: @successHoverColor;
   }
+  &:active {
+    color: #ffffff;
+    background-color: @successColor;
+    border-color: @successColor;
+  }
 }
 
 .warning-button {
@@ -98,6 +123,11 @@ export default {
     color: #ffffff;
     background-color: @warningHoverColor;
     border-color: @warningHoverColor;
+  }
+  &:active {
+    color: #ffffff;
+    background-color: @warningColor;
+    border-color: @warningColor;
   }
 }
 
@@ -111,6 +141,11 @@ export default {
     background-color: @dangerHoverColor;
     border-color: @dangerHoverColor;
   }
+  &:active {
+    color: #ffffff;
+    background-color: @dangerColor;
+    border-color: @dangerColor;
+  }
 }
 
 .info-button {
@@ -123,10 +158,15 @@ export default {
     background-color: @infoHoverColor;
     border-color: @infoHoverColor;
   }
+  &:active {
+    color: #ffffff;
+    background-color: @infoColor;
+    border-color: @infoColor;
+  }
 }
 
 // 大小
-.mediun-button {
+.medium-button {
   padding: 10px 20px;
   font-size: 14px;
   border-radius: 4px;
@@ -147,39 +187,145 @@ export default {
   cursor: not-allowed;
 }
 
-.disabled.suph-button{
+.disabled.suph-button {
   color: #c0c4cc;
   background-color: #fff;
   border-color: #ebeef5;
 }
 
-.disabled.primary-button{
+.disabled.primary-button {
   color: #fff;
   background-color: #a0cfff;
   border-color: #a0cfff;
 }
 
-.disabled.warning-button{
+.disabled.warning-button {
   color: #fff;
   background-color: #f3d19e;
   border-color: #f3d19e;
 }
 
-.disabled.info-button{
+.disabled.info-button {
   color: #fff;
   background-color: #c8c9cc;
   border-color: #c8c9cc;
 }
 
-.disabled.success-button{
+.disabled.success-button {
   color: #fff;
   background-color: #b3e19d;
   border-color: #b3e19d;
 }
 
-.disabled.danger-button{
+.disabled.danger-button {
   color: #fff;
   background-color: #fab6b6;
   border-color: #fab6b6;
+}
+
+// 圆形按钮
+.round {
+  border-radius: 20px;
+}
+
+//朴素按钮
+.plain {
+  &:hover,
+  &:focus {
+    background: #fff;
+    border-color: #409eff;
+    color: #409eff;
+  }
+}
+
+.plain.primary-button {
+  color: #409eff;
+  background: #ecf5ff;
+  border-color: #b3d8ff;
+  &:hover,
+  &:focus {
+    color: #ffffff;
+    background: @primaryColor;
+    border-color: @primaryColor;
+  }
+  &:active {
+    color: #ffffff;
+    background: #3a8ee6;
+    border-color: #3a8ee6;
+    outline: none;
+  }
+}
+
+.plain.success-button {
+  color: #67c23a;
+  background: #f0f9eb;
+  border-color: #c2e7b0;
+  &:hover,
+  &:focus {
+    color: #ffffff;
+    background: @successColor;
+    border-color: @successColor;
+  }
+  &:active {
+    color: #ffffff;
+    background: #5daf34;
+    border-color: #5daf34;
+    outline: none;
+  }
+}
+
+.plain.danger-button {
+  color: #f56c6c;
+  background: #fef0f0;
+  border-color: #fbc4c4;
+  &:hover,
+  &:focus {
+    color: #ffffff;
+    background: @dangerColor;
+    border-color: @dangerColor;
+  }
+  &:active {
+    color: #ffffff;
+    background: #dd6161;
+    border-color: #dd6161;
+    outline: none;
+  }
+}
+
+.plain.info-button {
+  color: #909399;
+  background: #f4f4f5;
+  border-color: #d3d4d6;
+  &:hover,
+  &:focus {
+    color: #ffffff;
+    background: @infoColor;
+    border-color: @infoColor;
+  }
+  &:active {
+    color: #ffffff;
+    background: #82848a;
+    border-color: #82848a;
+    outline: none;
+  }
+}
+
+.plain.warning-button {
+  color: #e6a23c;
+  background: #fdf6ec;
+  border-color: #f5dab1;
+  &:hover,
+  &:focus {
+    color: #ffffff;
+    background: @warningColor;
+    border-color: @warningColor;
+    outline: none;
+  }
+  &:active {
+    color: #ffffff;
+    background: #cf9236;
+    border-color: #cf9236;
+    outline: none;
+  }
 }
 </style>
