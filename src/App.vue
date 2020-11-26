@@ -38,21 +38,21 @@
     </div>
     <div class="demo-tr">
       <!-- <suph-button></suph-button> -->
-      <suph-button :disabled="isDisabled">默认按钮</suph-button>
-      <suph-button type="primary" :disabled="isDisabled">默认按钮</suph-button>
-      <suph-button type="success" :disabled="isDisabled">默认按钮</suph-button>
-      <suph-button type="danger" :disabled="isDisabled">默认按钮</suph-button>
-      <suph-button type="info" :disabled="isDisabled">默认按钮</suph-button>
-      <suph-button type="warning" :disabled="isDisabled">默认按钮</suph-button>
+      <suph-button disabled>默认按钮</suph-button>
+      <suph-button type="primary" disabled>默认按钮</suph-button>
+      <suph-button type="success" disabled>默认按钮</suph-button>
+      <suph-button type="danger" disabled>默认按钮</suph-button>
+      <suph-button type="info" disabled>默认按钮</suph-button>
+      <suph-button type="warning" disabled>默认按钮</suph-button>
     </div>
     <div class="demo-tr">
       <!-- <suph-button size="small"></suph-button> -->
-      <suph-button size="mini" :round="round">圆形按钮</suph-button>
-      <suph-button type="primary" size="small" :round="round">圆形按钮</suph-button>
-      <suph-button type="success" size="medium" :round="round">圆形按钮</suph-button>
-      <suph-button type="danger" :round="round">圆形按钮</suph-button>
-      <suph-button type="info" :round="round">圆形按钮</suph-button>
-      <suph-button type="warning" :round="round">圆形按钮</suph-button>
+      <suph-button size="mini" round>圆形按钮</suph-button>
+      <suph-button type="primary" size="small" round>圆形按钮</suph-button>
+      <suph-button type="success" size="medium" round>圆形按钮</suph-button>
+      <suph-button type="danger" round>圆形按钮</suph-button>
+      <suph-button type="info" round>圆形按钮</suph-button>
+      <suph-button type="warning" round>圆形按钮</suph-button>
     </div>
     <div class="demo-tr">
       <suph-button plain>朴素按钮</suph-button>
