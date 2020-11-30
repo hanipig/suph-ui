@@ -45,6 +45,7 @@ export default {
 @dangerHoverColor: #f78989;
 @infoColor: #909399;
 @infoHoverColor: #a6a9ad;
+@transparentColor: transparent;
 
 .suph-button {
   font-size: 14px;
@@ -220,7 +221,7 @@ export default {
   border-radius: 20px;
 }
 
-//朴素按钮
+// 朴素按钮
 .plain {
   &:hover,
   &:focus {
@@ -318,6 +319,27 @@ export default {
     background: #cf9236;
     border-color: #cf9236;
     outline: none;
+  }
+}
+
+// 文字按钮
+.text-button,
+.plain.text-button {
+  color: @primaryColor;
+  background: #ffffff;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  border-color: @transparentColor !important;
+  &:hover,
+  &:focus {
+    color: @primaryHoverColor;
+    background-color: @transparentColor !important;
+    border-color: @transparentColor !important;
+  }
+  &:active {
+    color: #3a8ee6;
+    background-color: @transparentColor !important;
+    border-color: @transparentColor !important;
   }
 }
 </style>
